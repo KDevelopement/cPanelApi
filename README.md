@@ -1,4 +1,4 @@
-## cPanel API PHP
+## cPanel API PHP (Simples)
 Manage your cPanel server with this PHP library. Simple to use. With this PHP library, you can manage your cPanel.
 
 [![License](https://img.shields.io/packagist/l/previewtechs/cpanel-whm-api.svg)](https://github.com/k7brasil/cPanelApi/blob/master/LICENSE)
