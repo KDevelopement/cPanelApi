@@ -2,7 +2,7 @@
 
 namespace KSeven\cPanel\Functions;
 
-use KSeven\cPanel;
+use KSeven\CPanel\Init;
 
 /**
  * Class Databases
@@ -22,7 +22,7 @@ class Databases
      *
      * @param WHMClient $client
      */
-    public function __construct(CPanel $client)
+    public function __construct(Init $client)
     {
         $this->exc = $client;
     }

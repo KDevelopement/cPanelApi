@@ -4,7 +4,7 @@
 
     //use GuzzleHttp\Psr7\Request;
 
-    class CPanel {
+    class Init {
         
         /**
          * @var array 

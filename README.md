@@ -21,7 +21,7 @@ composer require kseven/cpanelapi
 require "vendor/autoload.php";
 
 //Build CPanel Client
-use KSeven\CPanel;
+use KSeven\CPanel\Init;
 use KSeven\CPanel\Functions\Databases;
 
 require "vendor/autoload.php";
@@ -32,10 +32,10 @@ $Auth = [
   "PASSWORD" => "pass"
 ];
 
-$cPanel = new CPanel($Auth);
-$DBS = new Databases($cPanel);
+$cPanel = new Init($Auth);
+$Database = new Databases($cPanel);
 
-var_dump($accounts->searchAccounts());
+var_dump($Database->getDatabases());
 ```
 
 ### Available Functionality
