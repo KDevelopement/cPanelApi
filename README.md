@@ -41,7 +41,7 @@ composer require kseven/cpanelapi
 ### Available Functionality
 - CPanel
   - Databases (MySQL®)
-    -Database Information
+    - Database Information
       - getServerInformationDatabase (This function returns information about the account's host)
       - LocateServerDatabase (This function returns information about the account's host.)
     - Database Management
@@ -69,6 +69,7 @@ composer require kseven/cpanelapi
       - RemovePrivilegesUserDatabase (This function revokes a database user's privileges.)
       - SetPasswordUserDatabase (This function sets a database user's password.)
       - SetPrivilegesUserDatabase (This function sets a database user's privileges.)
+  - no more (pls)
 
 ### Contibutions
 You are always welcome to contribute in this library.
