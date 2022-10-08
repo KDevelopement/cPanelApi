@@ -1,6 +1,6 @@
 <?php
 
-    namespace KSeven\cPanelWHM;
+    namespace KSeven\CPanel;
 
     //use GuzzleHttp\Psr7\Request;
 

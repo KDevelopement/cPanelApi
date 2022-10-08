@@ -2,7 +2,7 @@
 
 namespace KSeven\cPanel\Functions;
 
-use KSeven\CPanel;
+use KSeven\cPanel;
 
 /**
  * Class Databases

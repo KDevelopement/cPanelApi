@@ -1,5 +1,5 @@
 {
-    "name": "kseven/cpanel-api",
+    "name": "kseven/cpanelapi",
     "description": "Manage cPanel with PHP",
     "type": "library",
     "license": "MIT",
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "KSeven\\cPanel\\": "src"
+            "KSeven\\CPanel\\": "src"
         }
     }
 }
