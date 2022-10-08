@@ -2,8 +2,6 @@
 
     namespace KSeven\CPanel;
 
-    //use GuzzleHttp\Psr7\Request;
-
     class Init {
         
         /**
@@ -17,18 +15,26 @@
         }
 
         /**
-         *
-         * @param $endpoint
-         * @param array $params
+         *  Get userame used a api
+         *  @param string
+         */
+        public function getUsername()
+        {
+            return $this->Auth["USER"];
+        }
+
+        /**
+         *  Send API via cURL
+         *  @param $endpoint
+         *  @param array $params
          */
         public function sendRequest($endpoint, array $params = [])
         {
-            //$URL = "https://" . $this->Auth["HOST"] . ":" . $this->Auth["PORT"] . "/execute" . "/" . $func;
             $URL = sprintf("https://" . "%s" . ":" . "%s" . "/execute" . "/%s", $this->Auth["HOST"], $this->Auth["PORT"], $endpoint);
-            if($params) {
+            if($params):
                 $queryParams = http_build_query($params);
                 $URL = $URL . "?" . $queryParams;
-            }
+            endif;
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER,0);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,0);
@@ -38,9 +44,9 @@
             curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
             curl_setopt($curl, CURLOPT_URL, $URL);
             $result = curl_exec($curl);
-            if ($result == false) {
+            if (!$result):
                 error_log("curl_exec threw error \"" . curl_error($curl) . "\" for $URL");   
-            }
+            endif;
             curl_close($curl);
             return $result;
         }

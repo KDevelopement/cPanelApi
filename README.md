@@ -1,5 +1,6 @@
 ## cPanel API PHP (Simples)
-Manage your cPanel server with this PHP library. Simple to use. With this PHP library, you can manage your cPanel.
+Manage your cPanel server with this PHP library. 
+Simple to use. With this PHP library, you can manage your cPanel.
 
 [![License](https://img.shields.io/packagist/l/previewtechs/cpanel-whm-api.svg)](https://github.com/k7brasil/cPanelApi/blob/master/LICENSE)
 [![Build Status](https://api.travis-ci.org/k7brasil/cPanelApi.svg?branch=master)](https://travis-ci.org/k7brasil/cPanelApi)
@@ -18,30 +19,56 @@ composer require kseven/cpanelapi
 ### Usage example
 ```php
 <?php
-require "vendor/autoload.php";
+  require "vendor/autoload.php";
 
-//Build CPanel Client
-use KSeven\CPanel\Init;
-use KSeven\CPanel\Functions\Databases;
+  //Build CPanel Client
+  use KSeven\CPanel\Init;
+  use KSeven\CPanel\Functions\Databases;
 
-require "vendor/autoload.php";
-$Auth = [
-  "HOST" => "seuhost",
-  "PORT" => "2083",
-  "USER" => "user",
-  "PASSWORD" => "pass"
-];
+  $Auth = [
+    "HOST" => "seuhost",
+    "PORT" => "2083",
+    "USER" => "user",
+    "PASSWORD" => "pass"
+  ];
 
-$cPanel = new Init($Auth);
-$Database = new Databases($cPanel);
+  $cPanel = new Init($Auth);
+  $Database = new Databases($cPanel);
 
-var_dump($Database->getDatabases());
+  var_dump($Database->getDatabases());
 ```
 
 ### Available Functionality
 - CPanel
-  - Databases
-    - getDatabases (List of all databases)  
+  - Databases (MySQL®)
+    -Database Information
+      - getServerInformationDatabase (This function returns information about the account's host)
+      - LocateServerDatabase (This function returns information about the account's host.)
+    - Database Management
+      - CheckDatabase (This function checks for errors in all of the tables in a database.)
+      - CreateDatabase (This function creates a database.)
+      - DeleteDatabase (This function deletes a database.)
+      - DumpSchemaDatabase (This function returns a string that you can give to to recreate a particular database’s schema.)
+      - getDatabases (This function lists an account's databases.)  
+      - RenameDatabase (This function renames a database.)
+      - RepairDatabase (This function repairs all of the tables in a database)
+      - UpdatePrivilegesDatabase (This function updates privileges for all databases and users on an account.)
+    - Remote Databases
+      - AddHostDatabase (This function authorizes a remote host to access the account's databases.)
+      - AddHostNoteDatabase (This function adds a note about a remote server.)
+      - DeleteHostDatabase (This function removes a remote host's access to the account's databases.)
+      - getHostNotesDatabases (This function returns the notes associated with the account's remote hosts.)
+    - User Management
+      - CreateUserDatabase (This function creates a database user.)
+      - DeleteUserDatabase (This function deletes a user.)
+      - getPrivilegesOnDatabase (This function lists a database user's privileges.)
+      - getRestrictionsDatabases (This function lists a database's name, username length restrictions, and database prefix.)
+      - ListRoutinesDatabases (This function returns a database user's routines.)
+      - ListUsersDatabases (This function lists an account's database users.)
+      - RenameUserDatabase (This function renames a database user.)
+      - RemovePrivilegesUserDatabase (This function revokes a database user's privileges.)
+      - SetPasswordUserDatabase (This function sets a database user's password.)
+      - SetPrivilegesUserDatabase (This function sets a database user's privileges.)
 
 ### Contibutions
 You are always welcome to contribute in this library.
