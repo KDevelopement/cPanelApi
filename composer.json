@@ -1,0 +1,21 @@
+{
+    "name": "kseven/cpanel-api",
+    "description": "Manage cPanel with PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "K'Seven",
+            "email": "anjsuporte@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KSeven\\cPanel\\": "src"
+        }
+    }
+}
